@@ -1,0 +1,26 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% load order_custom_template_tag %}
+{% load auth_extras %}
+
+{% block content %}
+<div>
+    <div class="card" style="width: 18rem;">
+        <div class="text-center border-bottom">
+            <img src="{% static '/assets/user_avater.png' %}" class="card-img-top w-50 text-center" alt="...">
+        </div>
+        <div class="card-body">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Name:</b> {{ request.user.first_name }} {{ request.user.last_name }}
+                    </li>
+                    <li class="list-group-item"><b>User Name:</b> {{ request.user.username }}</li>
+                    <li class="list-group-item"><b>Email:</b> {{ request.user.email }}</li>
+                    <li class="list-group-item"><b>Phone:</b> {{ request.user.phone }}</li>
+                    <li class="list-group-item"><b>Company Name:</b> {{ request.user.company_name }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
